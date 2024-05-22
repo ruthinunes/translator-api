@@ -1,0 +1,372 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  --header-height: 3.5rem;
+  --border-section: 56px 56px 0 0;
+
+  /*========== Colors ==========*/
+  --first-color: hsl(12, 32%, 22%);
+  --first-color-alt: hsl(12, 42%, 12%);
+  --first-color-light: hsl(12, 24%, 32%);
+  --second-color: hsl(39, 62%, 65%);
+  --title-color: hsl(12, 12%, 16%);
+  --text-color: hsl(12, 12%, 32%);
+  --text-color-light: hsl(12, 8%, 48%);
+  --white-color: #fff;
+
+  /*========== Font and typography ==========*/
+  --body-font: "Poppins", sans-serif;
+  --second-font: "Pacifico", cursive;
+  --biggest-font-size: 2.75rem;
+  --big-font-size: 1.75rem;
+  --h1-font-size: 1.5rem;
+  --h2-font-size: 1.25rem;
+  --h3-font-size: 1rem;
+  --normal-font-size: 0.938rem;
+  --small-font-size: 0.813rem;
+  --smaller-font-size: 0.75rem;
+
+  /*========== Font weight ==========*/
+  --font-regular: 400;
+  --font-medium: 500;
+  --font-semi-bold: 600;
+}
+
+/*========== Responsive typography ==========*/
+@media screen and (min-width: 1024px) {
+  :root {
+    --biggest-font-size: 4.5rem;
+    --big-font-size: 3rem;
+    --h1-font-size: 2.25rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.25rem;
+    --normal-font-size: 1rem;
+    --small-font-size: 0.875rem;
+    --smaller-font-size: 0.813rem;
+  }
+}
+
+/*=============== BASE STYLES ===============*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  background: linear-gradient(
+    90deg,
+    var(--first-color) 0%,
+    var(--first-color-alt) 100%
+  );
+  color: var(--text-color);
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+.container {
+  max-width: 1120px;
+  margin-inline: 1.5rem;
+}
+
+.grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.section {
+  padding: 2.4rem 0;
+}
+
+.main {
+  display: flex;
+}
+
+.flex {
+  display: flex;
+}
+
+/*=============== HEADER ===============*/
+.header {
+  margin-top: 1.6rem;
+  width: 100%;
+  color: var(--second-color);
+  text-align: center;
+}
+
+/*=============== TRANSLATOR ===============*/
+/* .translator {
+  flex-direction: column;
+  align-items: center;
+  gap: 2.4rem;
+  width: 90%;
+  max-width: 550px;
+  margin: 0 auto;
+}
+
+.translator__container {
+  min-width: 95%;
+}
+
+.translator__box {
+  text-align: initial;
+} */
+
+/*=============== TRANSLATOR ===============*/
+.translator {
+  flex-direction: column;
+  align-items: center;
+  gap: 2.4rem;
+  width: 90%;
+  max-width: 550px;
+  margin: 0 auto;
+}
+
+.translator__container {
+  min-width: 95%;
+}
+
+.translator__box {
+  text-align: initial;
+}
+
+.translator__select {
+  position: relative;
+  width: 100%;
+  align-self: center;
+  color: var(--title-color);
+  cursor: pointer;
+}
+
+.translator__options {
+  max-height: 200px; /* Define a altura máxima */
+  overflow-y: auto; /* Adiciona rolagem vertical */
+  overflow-x: hidden; /* Impede rolagem horizontal */
+  text-align: center;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  display: none;
+  border-radius: 5px;
+  box-shadow: 0px 5px 10px #00000033;
+  background-color: var(--second-color);
+  column-count: 2;
+  padding: 0.4rem 0.8rem;
+}
+
+/* Show translator options */
+.translator__options.active {
+  width: 100%;
+  display: block;
+}
+
+.translator__icon.toggle {
+  transform: rotateX(180deg);
+}
+
+.translator__option {
+  border-radius: 10px;
+  padding: 0.2rem;
+}
+
+.translator__option:hover {
+  background-color: #ccc;
+  cursor: pointer;
+}
+
+.translator__button {
+  justify-content: space-between;
+  padding: 0.4rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  color: var(--white-color);
+}
+
+.translator__input textarea,
+.translator__output textarea {
+  margin-top: 0.4rem;
+  width: 100%;
+  height: 150px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  background: none;
+  border-radius: 5px;
+  resize: none;
+  font-family: var(--body-font);
+  color: var(--white-color);
+  font-size: var(--normal-font-size);
+  overflow: auto;
+  outline: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
+/*=============== BUTTON ===============*/
+.button {
+  background-color: var(--second-color);
+  padding: 1rem 1.5rem;
+  border-radius: 4rem;
+  color: var(--title-color);
+  font-weight: var(--font-medium);
+  box-shadow: 0 8px 32px hsla(39, 62%, 65%, 0.25);
+  transition: box-shadow 0.3s;
+  outline: none;
+}
+
+.button:hover {
+  box-shadow: 0 8px 48px hsla(39, 62%, 65%, 0.3);
+}
+
+/*=============== TRANSLATOR SELECT ===============*/
+.translator__select {
+  position: relative;
+  width: 100%;
+  align-self: center;
+  color: var(--title-color);
+  cursor: pointer;
+}
+
+.translator__options {
+  text-align: center;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  display: none;
+  border-radius: 5px;
+  box-shadow: 0px 5px 10px #00000033;
+  background-color: var(--second-color);
+  padding: 0.4rem 0.8rem;
+}
+
+/* Show translator options */
+.translator__options.active {
+  width: 100%;
+  display: grid;
+  overflow: auto;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.translator__icon.toggle {
+  transform: rotateX(180deg);
+}
+
+.translator__option {
+  border-radius: 10px;
+  padding: 0.2rem;
+}
+
+.translator__option:hover {
+  background-color: #ccc;
+  cursor: pointer;
+}
+
+.translator__button {
+  justify-content: space-between;
+  padding: 0.4rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  color: var(--white-color);
+}
+
+.translator__input textarea,
+.translator__output textarea {
+  margin-top: 0.4rem;
+  width: 100%;
+  height: 170px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  background: none;
+  border-radius: 5px;
+  resize: none;
+  font-family: var(--body-font);
+  color: var(--white-color);
+  font-size: var(--normal-font-size);
+  overflow: auto;
+  outline: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
+/*=============== SCROLL BAR ===============*/
+::-webkit-scrollbar {
+  width: 0.6rem;
+  background-color: hsl(12, 8%, 65%);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: hsl(12, 8%, 45%);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: hsl(12, 8%, 35%);
+}
+
+/*=============== BREAKPOINTS ===============*/
+/* For small devices */
+@media screen and (max-width: 300px) {
+  .container {
+    margin-inline: 1rem;
+  }
+}
+
+/* For medium devices */
+@media screen and (min-width: 800px) {
+  .header {
+    margin-top: 3.2rem;
+  }
+
+  .translator {
+    width: 100%;
+    max-width: 1100px;
+    margin: auto;
+    gap: 3.2rem;
+  }
+
+  .translator__container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .translator__input textarea,
+  .translator__output textarea {
+    height: 250px;
+  }
+}
+
+/* For large devices */
+@media screen and (min-width: 1152px) {
+  .container {
+    margin-inline: auto;
+  }
+}
+
+@media screen and (min-width: 1248px) {
+  .translator__container {
+    column-gap: 4.5rem;
+  }
+
+  .translator__box {
+    text-align: initial;
+  }
+}

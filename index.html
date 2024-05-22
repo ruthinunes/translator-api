@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--=============== favicon ===============-->
+    <link
+      rel="shortcut icon"
+      href="assets/img/favicon.png"
+      type="image/x-icon"
+    />
+
+    <!-- ============== axios =============== -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <!--=============== css ===============-->
+    <link rel="stylesheet" href="frontend/assets/css/styles.css" />
+
+    <title>Responsive Translator</title>
+  </head>
+
+  <body>
+    <!--==================== header ====================-->
+    <header class="header" id="header">
+      <h1 class="">Tradutor</h1>
+    </header>
+
+    <!--==================== main ====================-->
+    <main class="main">
+      <!--==================== translator ====================-->
+      <section class="translator section flex" id="translator">
+        <div class="translator__container container grid">
+          <!--==================== translator box ====================-->
+          <div class="translator__box">
+            <div class="translator__select translator__select--input">
+              <div class="translator__button flex">
+                <span class="translator__text">Traduzir de : </span>
+                <img
+                  class="translator__icon"
+                  src="frontend/assets/img/poligono-icon.svg"
+                  alt=""
+                />
+              </div>
+              <div class="translator__options">
+                <!-- Opções serão inseridas dinamicamente -->
+              </div>
+            </div>
+            <div class="translator__input">
+              <textarea
+                id="input-text"
+                placeholder="Selecione um idioma"
+                disabled
+              ></textarea>
+            </div>
+          </div>
+
+          <!--==================== translator box ====================-->
+          <div class="translator__box">
+            <div class="translator__select translator__select--output">
+              <div class="translator__button flex">
+                <span class="translator__text">Traduzir para : </span>
+                <img
+                  class="translator__icon"
+                  src="frontend/assets/img/poligono-icon.svg"
+                  alt=""
+                />
+              </div>
+              <div class="translator__options">
+                <!-- Opções serão inseridas dinamicamente -->
+              </div>
+            </div>
+            <div class="translator__output">
+              <textarea
+                id="output-text"
+                placeholder="Selecione um idioma"
+                disabled
+              ></textarea>
+            </div>
+          </div>
+        </div>
+
+        <!--==================== translator button ====================-->
+        <div class="translator__action">
+          <a href="#" class="button">Traduzir </a>
+        </div>
+      </section>
+    </main>
+
+    <!--=============== main js ===============-->
+    <script type="module" src="frontend/assets/js/main.js"></script>
+  </body>
+</html>
