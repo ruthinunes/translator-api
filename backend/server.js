@@ -5,10 +5,16 @@ const cors = require("cors");
 const app = express();
 const port = 80;
 
-app.use(cors());
 app.use(express.json());
-
 dotenv.config();
+
+// Configurar CORS para permitir solicitações do seu frontend
+const corsOptions = {
+  origin: "https://ruthinunes.github.io",
+  optionsSuccessStatus: 200, // para compatibilidade com navegadores antigos
+};
+
+app.use(cors(corsOptions));
 
 // Endpoint para obter os idiomas
 app.get("/languages", async (req, res) => {
