@@ -10,7 +10,7 @@ const setSelectLanguage = () => {
 
 const fetchLanguages = async () => {
   try {
-    const response = await fetch("http://52.67.94.126/languages");
+    const response = await fetch("https://translator-api.macao.net");
     const data = await response.json();
     const languages = data.data.languages;
     populateLanguageOptions(languages);
@@ -170,7 +170,7 @@ const translate = () => {
   const inputLanguage = selectedInputLanguage.dataset.value;
   const outputLanguage = selectedOutputLanguage.dataset.value;
 
-  fetch("http://52.67.94.126/translate", {
+  fetch("https://translator-api.macao.net", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
