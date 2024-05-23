@@ -170,7 +170,7 @@ const translate = () => {
   const inputLanguage = selectedInputLanguage.dataset.value;
   const outputLanguage = selectedOutputLanguage.dataset.value;
 
-  fetch("https://translator-api.macao.net", {
+  fetch("https://translator-api.macao.net/translate", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
