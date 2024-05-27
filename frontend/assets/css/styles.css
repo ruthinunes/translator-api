@@ -125,7 +125,7 @@ img {
 }
 
 .translator__options {
-  max-height: 200px; /* Define a altura máxima */
+  max-height: 170px; /* Define a altura máxima */
   overflow-y: auto; /* Adiciona rolagem vertical */
   overflow-x: hidden; /* Impede rolagem horizontal */
   text-align: center;
@@ -187,6 +187,7 @@ img {
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
+  color: inherit;
 }
 
 /*=============== BUTTON ===============*/
@@ -228,6 +229,12 @@ img {
 }
 
 /* For medium devices */
+@media screen and (min-width: 555px) {
+  .translator__options {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
 @media screen and (min-width: 800px) {
   .main {
     margin-top: 2.4rem;
@@ -246,6 +253,10 @@ img {
 
   .translator__container {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .translator__options {
+    max-height: 220px;
   }
 
   .translator__input textarea,
