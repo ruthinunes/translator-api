@@ -10,7 +10,7 @@ const setSelectLanguage = () => {
 
 const fetchLanguages = async () => {
   try {
-    const response = await fetch( "https://translator-api.macao.net/api/languages");
+    const response = await fetch( "https://translator-api.home.kg/api/languages");
     const data = await response.json();
     const languages = data.data.languages;
     populateLanguageOptions(languages);
